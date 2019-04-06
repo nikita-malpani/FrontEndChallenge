@@ -1,0 +1,41 @@
+table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  table td, table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  table tr:nth-child(even){background-color: #f2f2f2;}
+  
+  table tr:hover {background-color: #ddd;}
+  
+  table thead tr {
+   
+    background-color: #4CAF50;
+   
+  }
+
+  input{
+    width: 300px;
+    height: 30px;
+    border-radius: 2px;
+    border: 1px solid;
+  }
+
+  button{
+    height: 32px;
+    width: 100px;
+    cursor: pointer;
+    background: #4CAF20;
+    border-radius: 2px;
+    font-size: 14px;
+  }
+i{
+  cursor: pointer;
+}
+
+  

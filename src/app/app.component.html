@@ -1,0 +1,49 @@
+<h1>Welocme to Course Find.</h1>
+
+<label><b> Find courses in Providers, Universities or Subject titles : </b></label>
+<input type="text" [(ngModel)]="courseQuery" />
+<button type="submit" (click)="searchCourse()">Search</button>
+
+<div *ngIf="showResult">
+  <h3>List of courses matched: {{searchTotalRecords}} out of {{totalRecords}}</h3>
+  <table *ngIf="searchTotalRecords != 0">
+    <thead>
+      <tr>    
+        <td>Course Id</td>
+        <td>Course Name</td>
+        <td>Provider</td>
+        <td>Universities</td>
+        <td>Parent Subject</td>
+        <td>Child Subject</td>
+        <td>Url</td>
+        <td>Next Session Date <i class="fa fa-sort" (click)="sort('date')"></i></td>
+        <td>Length <i class="fa fa-sort" (click)="sort('length')"></i></td>
+        <td>Video(Url)</td> 
+      </tr>    
+    </thead>
+    <tbody>
+      <tr *ngFor="let rec of filterdrecords">
+          <td>{{rec['Course Id']}}</td>
+          <td>{{rec['Course Name']}}</td>
+          <td>{{rec['Provider']}}</td>
+          <td>{{rec['Universities']?.Institutions}}</td>
+          <td>{{rec['Parent Subject']}}</td>
+          <td>{{rec['Child Subject']}}</td>
+          <td>{{rec['Url']}}</td>
+          <td>{{rec['Next Session Date']}}</td>
+          <td>{{rec['Length']}}</td>  
+          <td>{{rec['Url']}}</td>  
+         
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+
+<h4 *ngIf="searchTotalRecords == 0">
+    No Course found. Try Using better keywords.
+</h4>
+
+<h2 *ngIf="noData">
+  No data found on server.
+</h2>
